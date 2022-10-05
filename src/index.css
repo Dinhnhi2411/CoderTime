@@ -1,0 +1,190 @@
+:root {
+  --text-shadow-color: #ff9c99;
+  --text-main-color: #d74742;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "", "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+h1 {
+  margin: 20px;
+  font-family:Comic Sans, Comic Sans MS, cursive;	
+  font-size: 100px;
+  color: #ec4e4e;
+  text-shadow: 0 8px 9px #847762, 0px -2px 1px #fff;
+  font-weight: bold;
+}
+.container {
+  margin: 50px;
+  max-width: 1024px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* border: 5px solid gray; */
+  border-radius: 15px;
+
+}
+/* for container */
+.container {
+  --borderWidth: 25px;
+  background: rgb(247, 223, 223);
+  position: relative;
+  border-radius: var(--borderWidth);
+}
+.container:after {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  border-radius: calc(2 * var(--borderWidth));
+  z-index: -1;
+  animation: animatedgradient 3s ease alternate infinite;
+  background-size: 300% 300%;
+}
+
+
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+/*  */
+@-webkit-keyframes my {
+  0% { color: #bdf84f; } 
+  50% { color: rgb(27, 20, 20);  } 
+  100% { color:  #bdf84f;  } 
+}
+@-moz-keyframes my { 
+  0% { color:  #bdf84f; } 
+  50% { color: rgb(27, 20, 20);   }
+  100% { color:  #bdf84f;  } 
+}
+@-o-keyframes my { 
+  0% { color:  #bdf84f; } 
+  50% { color: rgb(27, 20, 20);  } 
+  100% { color:  #bdf84f;  } 
+}
+@keyframes my { 
+  0% { color:  #bdf84f; } 
+  50% { color: rgb(27, 20, 20);  }
+  100% { color:  #bdf84f;  } 
+} 
+.timer__display > p  {
+  
+  font-size:24px;
+  font-weight:bold;
+  -webkit-animation: my 1000ms infinite;
+  -moz-animation: my 1000ms infinite; 
+  -o-animation: my 1000ms infinite; 
+  animation: my 1000ms infinite;
+}
+.timer__display > p {
+  font-size: 5em;
+  font-weight:600;
+  margin-bottom:10px;
+  
+}
+.timer__wrapper {
+  border: 1px solid gray; 
+  border-top-left-radius:80px ;
+  border-bottom-right-radius: 80px;
+  background-color: #3B7A57;
+  box-shadow: rgba(244, 231, 231, 0.3) 0px 19px 38px, rgba(248, 239, 239, 0.22) 0px 15px 12px;
+  margin:10px;
+  padding:20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.button__wrapper {
+  display: flex;
+  width:50vw;
+  padding:10px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.button {
+  margin: 10px;
+  padding:10px;
+  height: 100%;
+  font-size: 1.5em;
+  border-radius: 50%;
+  border: 1px solid #FFF
+}
+.button:active {
+  border: 1px solid var(--text-main-color);
+  background-color: var(--text-main-color);
+}
+.button:hover {
+  filter: brightness(200%);
+}
+
+.button:disabled {
+  background-color: rgb(243, 128, 71);
+}
+
+@media only screen and (max-device-width: 1280px) {
+  * {
+    font-size: 0.9em;
+  }
+  h1 {
+    font-size: 60px;
+    line-height: 0px;
+  }
+  .button__wrapper {
+    margin: auto;
+    width: 100%;
+  }
+  .timer__display > p {
+    font-size: 3.8em;
+    padding-left: 0;
+  }
+}
+/* @media only screen and (max-device-width: 780px) {
+  * {
+    font-size: 0.9em;
+  }
+  h1 {
+    font-size: 30px;
+    line-height: 0px;
+  }
+  .timer__wrapper{
+    width:100%;
+  }
+  .button__wrapper {
+    margin: auto;
+    width: 100%;
+    justify-content: center;
+  }
+  .timer__display > p {
+    font-size: 3em;
+    padding-left: 0;
+  }
+} */
